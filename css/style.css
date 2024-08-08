@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
 /* General Dark Mode Styles */
 body {
     background-color: #121212;
@@ -7,22 +12,57 @@ body {
     padding: 0;
 }
 
-/* Header */
+/* Navbar */
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     background-color: #1e1e1e;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    color: #fff;
 }
 
-header h1 {
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
     margin: 0;
+}
+
+nav ul li a {
+    color: #90caf9;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #90caf9;
+    color: #1e1e1e;
+    border-radius: 5px;
+}
+
+.switch {
+    /* Existing switch styles */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Ensure dark mode styling is consistent */
+body.dark-mode nav ul li a {
     color: #90caf9;
 }
 
-header p {
-    margin: 5px 0 0;
-    color: #e0e0e0;
+body.dark-mode nav ul li a:hover {
+    background-color: #90caf9;
+    color: #1e1e1e;
 }
 
 /* About Section */
@@ -261,3 +301,46 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+
+/* Back to Top Arrow */
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    /* display: none; */
+    width: 40px;
+    height: 40px;
+    background-color: #90caf9;
+    color: #121212;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.back-to-top i {
+    width: 40px; 
+    height: 40px;
+}
+
+.back-to-top:hover {
+    background-color: #42a5f5;
+}
+
+/* Show button when scrolling */
+.show {
+    display: block;
+}
+
+/* Dark mode for back to top arrow */
+body.dark-mode .back-to-top {
+    background-color: #42a5f5;
+}
+
+body.dark-mode .back-to-top:hover {
+    background-color: #1e88e5;
+}
+
